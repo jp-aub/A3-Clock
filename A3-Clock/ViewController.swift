@@ -16,11 +16,18 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        timeAndDate = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.second) , userInfo: nil, repeats: true)
+        
+        // Set up current time. Must be done before timer to ensure no delay upon start up.
+        timeNow()
+        
+        // Begin timer
+        timeAndDate = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.timeNow) , userInfo: nil, repeats: true)
     }
     
-    @objc func second() {
-        dateLabel.text = DateFormatter.localizedString(from: Date(), dateStyle: .medium, timeStyle: .medium)
+    @objc func timeNow() {
+        let dateFormatting = DateFormatter()
+        dateFormatting.dateFormat = "EEE, dd MMM yyyy HH:mm:ss"
+        dateLabel.text = dateFormatting.string(from: Date())
     }
     
 }
