@@ -10,6 +10,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var countdownTimer: UIDatePicker!
+    @IBOutlet weak var timerBtn: UIButton!
+    @IBOutlet weak var timeRemaining: UILabel!
     
     var timeAndDate = Timer()
     
@@ -25,9 +28,48 @@ class ViewController: UIViewController {
     }
     
     @objc func timeNow() {
+        let date = Date()
         let dateFormatting = DateFormatter()
         dateFormatting.dateFormat = "EEE, dd MMM yyyy HH:mm:ss"
-        dateLabel.text = dateFormatting.string(from: Date())
+        dateLabel.text = dateFormatting.string(from: date)
+        checkTime()
+    }
+    
+    func checkTime() {
+        let time = Date()
+        let hour = DateFormatter()
+        hour.dateFormat = "HH"
+        let currentHour = hour.string(from: time)
+        
+        // Perform the time comparison. 12 represents 12:00 or when the clock changes to PM
+        let comparison = currentHour.compare("12")
+        
+        // If the current time is > 0 (current time is after 12:00), change background/color theme
+        if comparison.rawValue > 0 {
+            darkMode()
+        } else {
+            lightMode()
+        }
+    }
+    
+    func darkMode() {
+        view.backgroundColor = UIColor.black
+        dateLabel.textColor = UIColor.white
+        countdownTimer.setValue(UIColor.white, forKeyPath: "textColor")
+        timerBtn.layer.borderColor = UIColor.white.cgColor
+        timerBtn.layer.borderWidth = 1
+        timerBtn.titleLabel?.textColor = UIColor.white
+        timeRemaining.textColor = UIColor.white
+    }
+    
+    func lightMode() {
+        view.backgroundColor = UIColor.white
+        dateLabel.textColor = UIColor.black
+        countdownTimer.setValue(UIColor.black, forKeyPath: "textColor")
+        timerBtn.layer.borderColor = UIColor.black.cgColor
+        timerBtn.layer.borderWidth = 1
+        timerBtn.titleLabel?.textColor = UIColor.black
+        timeRemaining.textColor = UIColor.black
     }
     
 }

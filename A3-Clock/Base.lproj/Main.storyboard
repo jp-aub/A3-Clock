@@ -26,7 +26,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-ZO-7kg">
-                                        <rect key="frame" x="37" y="237" width="320" height="135"/>
+                                        <rect key="frame" x="36.666666666666657" y="237.33333333333331" width="320" height="134.33333333333331"/>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="f6S-hv-ZCZ">
                                         <rect key="frame" x="92.666666666666671" y="474.66666666666657" width="207.66666666666663" height="134.33333333333331"/>
@@ -62,7 +62,10 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="countdownTimer" destination="xRW-ZO-7kg" id="7Uh-7f-wfY"/>
                         <outlet property="dateLabel" destination="WiH-86-TLh" id="pBC-RJ-oAz"/>
+                        <outlet property="timeRemaining" destination="0uH-Kq-sKI" id="Sdh-Bb-vcY"/>
+                        <outlet property="timerBtn" destination="GZu-3K-73E" id="n4T-ts-pKP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
