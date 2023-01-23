@@ -55,7 +55,8 @@ class ViewController: UIViewController {
     func darkMode() {
         view.backgroundColor = UIColor.black
         dateLabel.textColor = UIColor.white
-        countdownTimer.setValue(UIColor.white, forKeyPath: "textColor")
+        countdownTimer.setValue(UIColor.black, forKeyPath: "textColor")
+        countdownTimer.backgroundColor = UIColor.white
         timerBtn.layer.borderColor = UIColor.white.cgColor
         timerBtn.layer.borderWidth = 1
         timerBtn.titleLabel?.textColor = UIColor.white
@@ -65,7 +66,8 @@ class ViewController: UIViewController {
     func lightMode() {
         view.backgroundColor = UIColor.white
         dateLabel.textColor = UIColor.black
-        countdownTimer.setValue(UIColor.black, forKeyPath: "textColor")
+        countdownTimer.setValue(UIColor.white, forKeyPath: "textColor")
+        countdownTimer.backgroundColor = UIColor.black
         timerBtn.layer.borderColor = UIColor.black.cgColor
         timerBtn.layer.borderWidth = 1
         timerBtn.titleLabel?.textColor = UIColor.black
