@@ -27,6 +27,9 @@
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-ZO-7kg">
                                         <rect key="frame" x="36.666666666666657" y="237.33333333333331" width="320" height="134.33333333333331"/>
+                                        <connections>
+                                            <action selector="changeCountdown:" destination="BYZ-38-t0r" eventType="valueChanged" id="yCo-pw-uWN"/>
+                                        </connections>
                                     </datePicker>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="f6S-hv-ZCZ">
                                         <rect key="frame" x="92.666666666666671" y="474.66666666666657" width="207.66666666666663" height="134.33333333333331"/>
@@ -40,6 +43,9 @@
                                                     </backgroundConfiguration>
                                                     <color key="baseForegroundColor" red="0.22492503159999999" green="0.22492503159999999" blue="0.22492503159999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                 </buttonConfiguration>
+                                                <connections>
+                                                    <action selector="startTimer:" destination="BYZ-38-t0r" eventType="touchDown" id="Da4-bz-Znm"/>
+                                                </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-Kq-sKI">
                                                 <rect key="frame" x="83.333333333333329" y="87.333333333333371" width="41.333333333333329" height="47"/>

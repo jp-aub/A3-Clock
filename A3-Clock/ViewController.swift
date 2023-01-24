@@ -15,6 +15,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var timeRemaining: UILabel!
     
     var timeAndDate = Timer()
+    var timeLeft : Int?
+    var countdownTime = Timer()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,10 @@ class ViewController: UIViewController {
         
         // Set up current time. Must be done before timer to ensure no delay upon start up.
         timeNow()
+        
+        // Get initial countdown value (default = 1 minute)
+        getCountdown()
+    
         
         // Begin timer
         timeAndDate = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.timeNow) , userInfo: nil, repeats: true)
@@ -74,5 +80,35 @@ class ViewController: UIViewController {
         timeRemaining.textColor = UIColor.black
     }
     
+    func getCountdown() {
+        timeLeft = Int(countdownTimer.countDownDuration)
+    }
+    
+    @IBAction func changeCountdown(_ sender: UIDatePicker) {
+        timeLeft = Int(countdownTimer.countDownDuration)
+    }
+    
+    @IBAction func startTimer(_ sender: UIButton) {
+        countdownTime.invalidate()
+        countdownTime = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(countdown), userInfo: nil, repeats: true)
+    }
+    
+    @objc func countdown() {
+        // Get seconds remaining on countdown
+        let seconds = timeLeft!
+        
+        // Convert the seconds into a HH:MM:SS format
+        let format = DateComponentsFormatter()
+        format.allowedUnits = [.hour, .minute, .second]
+        format.unitsStyle = .positional
+        format.zeroFormattingBehavior = .pad
+        let formattedTime = format.string(from: TimeInterval(seconds))!
+        
+        // Set label text with formatted remaining time
+        timeRemaining.text = "Time Remaining: \(formattedTime)"
+        
+        // Decrement timer by one second
+        timeLeft! -= 1
+    }
 }
 
