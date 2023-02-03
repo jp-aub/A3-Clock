@@ -32,7 +32,6 @@ class ViewController: UIViewController {
         // Get initial countdown value (default = 1 minute)
         getCountdown()
     
-        
         // Begin timer
         timeAndDate = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector:#selector(self.timeNow) , userInfo: nil, repeats: true)
     }
@@ -54,7 +53,8 @@ class ViewController: UIViewController {
         let currentHour = Int(hour.string(from: time))
         
         // Perform the time comparison. 12 represents 12:00 or when the clock changes to PM
-        // If the current time is > 0 (current time is after 12:00), change background/color theme
+        // If the current time is > 0 (current time is after 12:00), change background/color theme to dark mode.
+        // If before 12:00, set to light mode.
         if currentHour! >= 12 {
             darkMode()
         } else {
