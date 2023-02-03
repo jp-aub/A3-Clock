@@ -104,6 +104,7 @@ class ViewController: UIViewController {
             AudioServicesDisposeSystemSoundID(1151)
             musicTimer.invalidate()
             countdownBtnStatus = 0;
+            timeRemaining.text = ""
             timerBtn.setTitle("Start Timer", for: .normal)
             getCountdown()
         }
