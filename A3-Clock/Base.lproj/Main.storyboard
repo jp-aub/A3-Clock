@@ -16,28 +16,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="103" translatesAutoresizingMaskIntoConstraints="NO" id="el0-yE-uxF">
-                                <rect key="frame" x="0.0" y="109" width="393" height="609"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="el0-yE-uxF">
+                                <rect key="frame" x="0.0" y="79" width="393" height="719"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WiH-86-TLh">
-                                        <rect key="frame" x="164.66666666666666" y="0.0" width="64" height="134.33333333333334"/>
+                                        <rect key="frame" x="164.66666666666666" y="0.0" width="64" height="233"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="27"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="countDownTimer" countDownDuration="60" minuteInterval="1" useCurrentDate="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xRW-ZO-7kg">
-                                        <rect key="frame" x="36.666666666666657" y="237.33333333333331" width="320" height="134.33333333333331"/>
+                                        <rect key="frame" x="36.666666666666657" y="243" width="320" height="233"/>
                                         <connections>
                                             <action selector="changeCountdown:" destination="BYZ-38-t0r" eventType="valueChanged" id="yCo-pw-uWN"/>
                                         </connections>
                                     </datePicker>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="f6S-hv-ZCZ">
-                                        <rect key="frame" x="92.666666666666671" y="474.66666666666657" width="207.66666666666663" height="134.33333333333331"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="f6S-hv-ZCZ">
+                                        <rect key="frame" x="142" y="486" width="109.33333333333331" height="233"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GZu-3K-73E">
-                                                <rect key="frame" x="0.0" y="0.0" width="207.66666666666666" height="47.333333333333336"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="109.33333333333333" height="111.66666666666667"/>
                                                 <state key="normal" title="Button"/>
-                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer / Stop Music" cornerStyle="fixed">
+                                                <buttonConfiguration key="configuration" style="plain" title="Start Timer" cornerStyle="fixed">
                                                     <backgroundConfiguration key="background" cornerRadius="0.0">
                                                         <color key="strokeColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </backgroundConfiguration>
@@ -48,7 +48,7 @@
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uH-Kq-sKI">
-                                                <rect key="frame" x="83.333333333333329" y="87.333333333333371" width="41.333333333333329" height="47"/>
+                                                <rect key="frame" x="34" y="121.66666666666663" width="41.333333333333343" height="111.33333333333331"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -63,8 +63,8 @@
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="el0-yE-uxF" secondAttribute="trailing" id="Afq-ez-iKz"/>
                             <constraint firstItem="el0-yE-uxF" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="XTv-rt-FzQ"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="el0-yE-uxF" secondAttribute="bottom" constant="100" id="gG1-ja-lme"/>
-                            <constraint firstItem="el0-yE-uxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="50" id="pN5-4V-sIA"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="el0-yE-uxF" secondAttribute="bottom" constant="20" id="gG1-ja-lme"/>
+                            <constraint firstItem="el0-yE-uxF" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="20" id="pN5-4V-sIA"/>
                         </constraints>
                     </view>
                     <connections>
